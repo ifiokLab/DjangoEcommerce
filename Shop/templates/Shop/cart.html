@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        <form action="">
+            <button id="minus">minus</button>
+            <input type="text" name="num" value="1" id="num">
+            <button id="link">plus</button>
+        </form>
+
+    </div>
+</body>
+<script>
+    
+    var num = document.getElementById('num');
+    var link = document.getElementById('link').addEventListener('click',cartPlus);
+    var minus = document.getElementById('minus').addEventListener('click',cartMinus);
+    
+    function cartPlus(event){
+        event.preventDefault();
+        val = parseInt(num.value);
+        if(val < 100){
+        num.value = val + 1;
+        }
+        else{
+        num.value = 100;
+        }
+    }
+    function cartMinus(event){
+       event.preventDefault();
+       val = parseInt(num.value);
+       if(val > 0){
+        num.value = val - 1;
+       }
+       else{
+        num.value = 0;
+       }
+    }
+
+</script>
+</html>

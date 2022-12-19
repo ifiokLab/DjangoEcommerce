@@ -1,0 +1,193 @@
+
+{% extends 'Shop/index.html' %}
+{% load static %}
+
+{% block head %}
+<link rel="stylesheet" href="{% static 'css/product-detail.css' %}">
+{% endblock %}
+
+{% block content %}
+<section class="detail-wrapper">
+    <div class="detail-container">
+        <div class="detail-card-1">
+            <img src="{{product.main_image.url}}" alt="">
+        </div>
+        <div class="detail-card-2">
+            <div class="detail-text-1">
+                <div class="store">
+                    <div class="official-store">Official Store</div>
+                    <i class="fa-solid fa-star"></i>
+                </div>
+                <div class="title">{{product.name}}</div>
+                <div class="ratings-card">
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <div class="ratings-num">(7 verified ratings)</div>
+                </div>
+            </div>
+            <div class="detail-text-2">
+                <div class="price-card">
+                    <div class="price">₦{{product.discount_price}}</div>
+                    <div class="discount-card">
+                        <span class="discount">₦ {{product.price}}</span> 
+                        <span class="discount-num">-{{discount_rate}}%</span>
+                    </div>
+                </div>
+               <a href="{{ product.get_add_to_cart_url }}" class="cart">
+                <i class="fa-solid fa-cart-shopping"></i>
+                <button>ADD TO CART</button>
+               </a>
+            </div>
+        </div>
+    </div>
+</section>
+<!--Product description-->
+<section class="product-description">
+    <div class="description-wrapper">
+        <div class="title">Product Description</div>
+        <p>{{product.description|safe}}</p>
+    </div>
+</section>
+
+<!--product feebacks-->
+<section class="product-feedback">
+    <div class="feedback-wrapper">
+        <div class="verified-box">
+            <div class="box1">Verified Customer Feedback</div>
+            <a href="" class="box2">
+                SEE ALL
+                <i class="fa-solid fa-chevron-right"></i>
+            </a>
+        </div>
+
+        <div class="feedback-container">
+            <div class="feedback-box1">
+                <div class="feedback-box1-wrapper">
+                    <div class="initial-text">VERIFIED RATINGS (7)</div>
+                    <div class="box1-card">
+                        <div class="box1-num">3.9/5</div>
+                        <div class="box-ratings">
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star-half"></i>
+                        </div>
+                        <div class="box1-verified">7 verified ratings</div>
+                    </div>
+
+                    <div class="box2-card">
+                        <div class="box2-items">
+                            <div class="items-a">
+                                <span class="a-num">5</span>
+                                <i class="fa-solid fa-star"></i>
+                                <span class="a-value">(2)</span>
+                            </div>
+                            <div class="items-b">
+                                <progress value="10" max="100"></progress>
+                            </div>
+                        </div>
+                        <div class="box2-items">
+                            <div class="items-a">
+                                <span class="a-num">4</span>
+                                <i class="fa-solid fa-star"></i>
+                                <span class="a-value">(3)</span>
+                            </div>
+                            <div class="items-b">
+                                <progress value="20" max="100"></progress>
+                            </div>
+                        </div>
+                        <div class="box2-items">
+                            <div class="items-a">
+                                <span class="a-num">3</span>
+                                <i class="fa-solid fa-star"></i>
+                                <span class="a-value">(5)</span>
+                            </div>
+                            <div class="items-b">
+                                <progress value="30" max="100"></progress>
+                            </div>
+                        </div>
+                        <div class="box2-items">
+                            <div class="items-a">
+                                <span class="a-num">2</span>
+                                <i class="fa-solid fa-star"></i>
+                                <span class="a-value">(2)</span>
+                            </div>
+                            <div class="items-b">
+                                <progress value="4" max="100"></progress>
+                            </div>
+                        </div>
+                        <div class="box2-items">
+                            <div class="items-a">
+                                <span class="a-num">1</span>
+                                <i class="fa-solid fa-star"></i>
+                                <span class="a-value">(0)</span>
+                            </div>
+                            <div class="items-b">
+                                <progress value="0" max="100"></progress>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="feedback-box2">
+               <div class="initial-text">COMMENTS FROM VERIFIED PURCHASES(2)</div>
+               <div class="comment-card">
+                    <div class="card1">
+                        <div class="stars">
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                        </div>
+                        <div class="username">John Doe</div>
+                    </div>
+                    <div class="card2">
+                        <p>Great device. I will recommend this Intel Pentium rather than the Intel Celeron processor that took my enemy through hell.</p>
+                        <div class="extra-container">
+                            <div class="extra1">
+                                <span>07-09-2022</span>
+                                <span>by Goddon</span>
+                            </div>
+                            <div class="extra2">
+                                <i></i>
+                                <span>Verified Purchase</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="comment-card">
+                    <div class="card1">
+                        <div class="stars">
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i style="color:initial;" class="fa-solid fa-star"></i>
+                            <i style="color:initial;" class="fa-solid fa-star"></i>
+                        </div>
+                        <div class="username">Rakiya</div>
+                    </div>
+                    <div class="card2">
+                        <p>I wasnt so happy wit the order...bcos the color I ordered was nt wat I got...pls tk note</p>
+                        <div class="extra-container">
+                            <div class="extra1">
+                                <span>07-09-2022</span>
+                                <span>by Rakiya</span>
+                            </div>
+                            <div class="extra2">
+                                <i></i>
+                                <span>Verified Purchase</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}

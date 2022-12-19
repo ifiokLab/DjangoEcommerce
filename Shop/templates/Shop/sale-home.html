@@ -1,0 +1,118 @@
+{% extends 'Shop/salecenter.html' %}
+{% load static %}
+
+{% block head %}
+<link rel="stylesheet" href="{% static 'css/sale-home.css' %}">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.min.js" integrity="sha512-aVKKRRi/Q/YV+4mjoKBsE4x3H+BkegoM/em46NNlCqNTmUYADjBbeNefNxYV7giUp0VxICtqdrbqU7iVaeZNXA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+{% endblock %}
+
+{% block content %}
+
+<section class="menu">
+    <div class="menu-wrapper">
+        <div class="menu-card1">
+            <div class="items"  onclick="show()">
+                <div>
+                    <i class="fa-regular fa-user"></i>
+                    <span class="title">Products</span>
+                    <i class="fa-solid fa-chevron-down"></i>
+                </div>
+                <div class="box" id="box1">
+                    <a href="">Manage Product</a>
+                    <a href="{% url 'create-product' %}">Create a new product</a>
+                </div>
+            </div>
+            <div class="items" onclick="show2()">
+                <div>
+                    <i class="fa-regular fa-user"></i>
+                    <span class="title">Order</span>
+                    <i class="fa-solid fa-chevron-down"></i>
+                </div>
+                <div class="box" id="box2">
+                    <a href="{% url 'seller-orders' %}">Manage Order</a>
+                   
+                </div>
+            </div>
+            <div class="items" onclick="show3()">
+               <div>
+                    <i class="fa-regular fa-user"></i>
+                    <span class="title">Settings</span>
+                    <i class="fa-solid fa-chevron-down"></i>
+               </div>
+                <div class="box" id="box3">
+                    <a href="{% url 'seller-profile' %}">Your Profile</a>
+                </div>
+            </div>
+        </div>
+        <div class="menu-card2">
+            <div class="items">
+                <span class="title">Help</span>
+                <i class="fa-solid fa-chevron-down"></i>
+            </div>
+            <div class="items" onclick="show4()">
+               <div>
+                    <i class="fa-regular fa-user"></i>
+               </div>
+                <div class="box" id="box4">
+                    <a href="{% url 'seller-logout' %}">Logout</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="table-card">
+    <table border="1">
+        <thead>
+            <th>Id</th>
+            <th>Product Name</th>
+            <th>Created</th>
+            <th>Price</th>
+            <th>Sale Price</th>
+            <th>Avaliable</th>
+            <th>Actions</th>
+        </thead>
+        {% for data in products %}
+        <tr>
+            <td>{{data.id}}</td>
+            <td>{{data.name}}</td>
+            <td>{{data.created_date}}</td>
+            <td>{{data.price}}</td>
+            <td>{{data.discount_price}}</td>
+            <td>{{data.available}}</td>
+            <td>
+               <div class="action-wrapper">
+                <a href="{% url 'edit-product' data.id %}" class="edit">Edit</a>
+                <a href="{% url 'delete-product' data.id %}" class="delete">Delete</a>
+               </div>
+            </td>
+        </tr>
+        {% endfor %}
+    </table>
+   
+</section>
+{% endblock %}
+
+{% block script %}
+<script>
+    function show(){
+        var a = document.getElementById('box1');
+        a.classList.toggle('active');
+    }
+    function show2(){
+        var b = document.getElementById('box2');
+        b.classList.toggle('active');
+    }
+    function show3(){
+        var c = document.getElementById('box3');
+        c.classList.toggle('active');
+    }
+    function show4(){
+        var d = document.getElementById('box4');
+        d.classList.toggle('active');
+    }
+
+</script>
+{% endblock %}
+
+

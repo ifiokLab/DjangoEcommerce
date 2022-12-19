@@ -1,0 +1,101 @@
+
+.menu{
+    padding: 3rem 9% 0 9%;
+    margin-top: 50px;
+    border: dashed;
+}
+
+.menu-wrapper{
+    border:solid #c7c7cd 2px ;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom:4px;
+
+}
+
+.menu-card1 , .menu-card2{
+    display: flex;
+    padding: 0 20px;
+}
+.menu-card1 .items , .menu-card2 .items{
+    font-size: 1.6rem;
+    font-weight: 800;
+    padding: 5px 14px;
+    border-right: solid #c7c7cd 1px;
+    position: relative;
+   
+
+}
+.menu-card1 .items:hover , .menu-card2 .items:hover{
+    border-bottom: #0984e3 solid 2px;
+    cursor: pointer;
+}
+
+.menu-card1 .title{
+    font-size: 1.6rem;
+    font-weight: 800;
+    margin: 0 10px;
+}
+.menu-wrapper .box{
+    position: absolute;
+    display: none;
+    top: 42px;   
+    flex-direction: column;
+    width: 200px;
+    left: -20px;
+    background-color: #30a035;
+    padding: 10px 20px;
+    
+}
+
+.menu-wrapper .box.active{
+    display: flex;
+    
+}
+.menu-wrapper .box a{
+    font-size: 1.6rem;
+    text-decoration: none;
+    color: #000000;
+    color: white;
+    font-weight:initial;
+    margin: 6px 0;
+}
+
+.table-card{
+    padding: 3rem 9%;
+}
+table{
+    min-width: 100%;
+    border-collapse: collapse;
+    font-size: 1.2rem;
+}
+.action-wrapper{
+    display: flex;
+    justify-content: center;
+}
+.action-wrapper .edit ,.action-wrapper .delete {
+    text-decoration: none;
+    padding: 6px 22px;
+    color: white;
+    font-size: 1.2rem;
+    margin-right: 10px;
+}
+.action-wrapper .edit{
+    background-color: #30a035;
+}
+
+.action-wrapper .delete{
+    background-color: #ff6900;
+}
+thead{
+    background-color: #30a035;
+}
+th{
+    padding: 14px 0; 
+    color: white;
+    border: solid #30a035;
+}
+td{
+    text-align: center;
+}

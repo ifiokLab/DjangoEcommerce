@@ -1,0 +1,134 @@
+{% extends 'Shop/salecenter.html' %}
+{% load static %}
+
+{% block head %}
+<link rel="stylesheet" href="{% static 'css/seller-profile.css' %}">
+{% endblock %}
+
+{% block content %}
+<section class="login-container">
+    <section class="login-wrapper">
+        
+        <form action="" method="POST">
+            {% csrf_token %}
+            <div class="icon-card">
+                <div class="icon-text">Seller Account Information</div>
+                {{form.errors}}
+            </div>
+            
+            <div class="form-items">
+                <div class="form-items-card">
+                    <div class="form-items-a">Seller ID:</div>
+                    <div class="form-items-b">
+                        <input class="disabled" type="text"  id="" value="{{seller.id}}" disabled>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="form-items">
+                <div class="form-items-card">
+                    <div class="form-items-a">Shop Name:</div>
+                    <div class="form-items-b">
+                        <input class="disabled" type="text"  id="" value="{{seller.shop_name}}" disabled>
+                        <input  type="hidden" name="shop_name" id="" value="{{seller.shop_name}}" >
+                    </div>
+                   
+                </div>
+                <div style="margin: 2px;">Choose a unique name for your online shop: this is the name that will appear on the Jumia marketplace! It is forbidden to use a registered trademark in your shop name without the brand authorization.</div>
+            </div>
+            <div class="form-items">
+                <div class="form-items-card">
+                    <div class="form-items-a">Email:</div>
+                    <div class="form-items-b">
+                        <input class="disabled" type="email" name="" id="" placeholder="{{user.email}}" disabled>
+                    </div>
+                </div>
+                <div style="margin: 2px;">Your account will be linked to this email address and we will use it to send all our communications.</div>
+            </div>
+            <div class="form-items">
+                <div class="form-items-card">
+                    <div class="form-items-a">Business Type:</div>
+                    <div class="form-items-b">
+                        {{form.business_type}}
+                    </div>
+                </div>
+                <div style="margin: 2px;">Please select if you're an Individual or Business Entity/Company</div>
+            </div>
+            <div class="form-items">
+                <div class="form-items-card">
+                    <div class="form-items-a">Phone number</div>
+                    <div class="form-items-b">
+                        {{form.phone_number}}
+                    </div>
+                </div>
+                <div style="margin: 2px;">When we need to contact you urgently, this is the number we will call.</div>
+            </div>
+            <div class="form-items">
+                <div class="form-items-card">
+                    <div class="form-items-a">Account Manager First and Last Name:</div>
+                    <div class="form-items-b">
+                        <input class="disabled" type="text" name="" id=""  placeholder="{{user.first_name}} {{user.last_name}}" disabled>
+                        <input  type="hidden" name="user" id="" value="{{user.id}}" placeholder="{{user.first_name}} {{user.last_name}}">
+                    </div>
+                </div>
+                <div style="margin: 2px;">Your name or the name of the person in your team who will manage your account. This is the contact we will primarily use to contact you.</div>
+            </div>
+            <div class="form-items">
+                <div class="form-items-card">
+                    <div class="form-items-a">Address:</div>
+                    <div class="form-items-b">
+                        {{form.address}}
+                    </div>
+                </div>
+            </div>
+            <div class="form-items">
+                <div class="form-items-card">
+                    <div class="form-items-a">Region:</div>
+                    <div class="form-items-b">
+                        {{form.region}}
+                    </div>
+                </div>
+            </div>
+            <div class="form-items">
+                <div class="form-items-card">
+                    <div class="form-items-a">City:</div>
+                    <div class="form-items-b">
+                        {{form.city}}
+                    </div>
+                </div>
+            </div>
+            <div class="form-items">
+                <div class="form-items-card">
+                    <div class="form-items-a">Bank Name:</div>
+                    <div class="form-items-b">
+                        {{form.bank_name}}
+                    </div>
+                </div>
+            </div>
+            <div class="form-items">
+                <div class="form-items-card">
+                    <div class="form-items-a">Account Name:</div>
+                    <div class="form-items-b">
+                        {{form.account_name}}
+                    </div>
+                </div>
+            </div>
+            <div class="form-items">
+                <div class="form-items-card">
+                    <div class="form-items-a">Account Number:</div>
+                    <div class="form-items-b">
+                        {{form.account_number}}
+                    </div>
+                </div>
+            </div>
+          
+          
+            <div class="form-item">
+               <button>Save</button>
+            </div>
+            <p class="support">For further support, you may visit the Help Center or contact our customer service team.</p>
+        </form>
+    </section>
+   </section>
+{% endblock %}
+

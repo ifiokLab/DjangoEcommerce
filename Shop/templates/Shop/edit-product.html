@@ -1,0 +1,38 @@
+{% extends 'Shop/salecenter.html' %}
+{% load static %}
+
+{% block head %}
+<link rel="stylesheet" href="{% static 'css/sale-home.css' %}">
+{% endblock %}
+
+{% block content %}
+<form action="" method="post" enctype="multipart/form-data" >
+   {% csrf_token %}
+   <h1>{{user.id}}</h1>
+   <center>
+          {{form.errors}}  
+    <p>
+        {{form.category.label}}
+        {{form.category}}
+    
+    </p>
+    <p>
+        {{form.name.label}}
+        {{form.name}}</p>
+    <p>
+        
+        <input type="hidden" name="seller" value="{{seller.id}}" >
+    </p>
+    <p>{{form.description}}</p>
+    <p>{{form.brand}}</p>
+    <p>{{form.main_image}}</p>
+    <p>{{form.image2}}</p>
+    <p>{{form.image3}}</p>
+    <p>{{form.image4}}</p>
+    <p>{{form.price}}</p>
+    <p>{{form.discount_price}}</p>
+    <p>{{form.available}}</p>
+    <button type="submit">Submit</button>
+   </center>
+</form>
+{% endblock %}

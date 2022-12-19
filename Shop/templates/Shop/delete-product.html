@@ -1,0 +1,17 @@
+{% extends 'Shop/salecenter.html' %}
+{% load static %}
+
+{% block head %}
+<link rel="stylesheet" href="{% static 'css/sale-home.css' %}">
+{% endblock %}
+
+{% block content %}
+<form action="" method="post" enctype="multipart/form-data" >
+   {% csrf_token %}
+   <center>
+    <p>Are you sure you want to delete {{product.name}}?</p>
+   {{form.as_p}}
+    <button type="submit">Submit</button>
+   </center>
+</form>
+{% endblock %}

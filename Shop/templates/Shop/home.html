@@ -1,0 +1,162 @@
+{% extends 'Shop/index.html' %}
+{% load static %}
+
+{% block content %}
+
+    <!--hero image begins-->
+    <section class="hero-image">
+        <div class="hero-categories">
+            <div class="categories-wrapper">
+                <div class="items">
+                    <i class="fa-solid fa-apple-whole"></i>
+                    <span>Supermarket</span>
+                </div>
+                <div class="items">
+                    <i class="fa-solid fa-heart"></i>
+                    <span>Health & Beauty</span>
+                </div>
+                <div class="items">
+                    <i class="fa-solid fa-cart-shopping"></i>
+                    <span>Home & Office</span>
+                </div>
+                <div class="items">
+                    <i class="fa-solid fa-cart-shopping"></i>
+                    <span>Phone & Tablets</span>
+                </div>
+                <div class="items">
+                    <i class="fa-solid fa-cart-shopping"></i>
+                    <span>Computing</span>
+                </div>
+                <div class="items">
+                    <i class="fa-solid fa-cart-shopping"></i>
+                    <span>Electronics</span>
+                </div>
+                <div class="items">
+                    <i class="fa-solid fa-cart-shopping"></i>
+                    <span>Women's Fashion</span>
+                </div>
+                <div class="items">
+                    <i class="fa-solid fa-cart-shopping"></i>
+                    <span>Men's Fashion</span>
+                </div>
+                <div class="items">
+                    <i class="fa-solid fa-cart-shopping"></i>
+                    <span>Baby Product</span>
+                </div>
+                <div class="items">
+                    <i class="fa-solid fa-cart-shopping"></i>
+                    <span>Gaming</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="hero-container">
+           <div class="hero-wrapper">
+                <div class="swiper-slide slide">
+                    <img src="{% static 'images/TVsub_MallDesktop.jpg' %}" alt="">
+                </div>
+                <div class="swiper-slide slide">
+                    <img src="{% static 'images/Slider_copy.jpg' %}" alt="">
+                </div>
+                <div class="swiper-slide slide">
+                    <img src="{% static 'images/Binatone-Slider.gif' %}" alt="">
+                </div>
+                <div class="swiper-slide slide">
+                    <img src="{% static 'images/SUPERMARKET_SX__712x384_copy_4.png' %}" alt="">
+                </div>
+                <div class="swiper-slide slide">
+                    <img src="{% static 'images/Brand-day-slider-live-now.gif' %}" alt="">
+                </div>
+                <div class="swiper-slide slide">
+                    <img src="{% static 'images/Homepage-(712x384.png' %}" alt="">
+                </div>
+                <div class="swiper-slide slide">
+                    <img src="{% static 'images/Nestle_slider_FS.jpg' %}" alt="">
+                </div>
+                <div class="swiper-slide slide">
+                    <img src="{% static 'images/NESTLE-brandNestle-Slider.jpg' %}" alt="">
+                </div>
+                
+           </div>
+            
+            <div class="swiper-pagination">
+                <span class="dot"></span> 
+                <span class="dot"></span> 
+                <span class="dot"></span> 
+                <span class="dot"></span> 
+                <span class="dot"></span> 
+                <span class="dot"></span> 
+                <span class="dot"></span> 
+                <span class="dot"></span> 
+            </div>
+        </div>
+    </section>
+
+    <section class="product-container">
+        <div class="product-categories">
+            <div class="top-deal-card">
+                <div class="top-deal-1">Top Deal | </div>
+                <div class="top-deal-2"> Phones</div>
+            </div>
+
+            <div class="see-all">See all<i class="fa-solid fa-chevron-right"></i></div>
+        </div>
+
+        <div class="product-wrapper">
+
+            {% for data in products %}
+           
+             {% if data.category.title == 'Phones' %}
+            <a href="{% url 'product_detail' data.category data.id %}"  class="product-card">
+                    <img src="{{data.main_image.url}}" alt="">
+                    <div class="text">
+                        <div class="headings">{{data.name}}</div>
+                        <div class="price-card">
+                            <div class="price">₦{{data.price}}</div>
+                            <div class="discount">₦{{data.discount_price}}</div>
+                        </div>
+                    </div>
+            </a>
+            {% endif %}
+            {% endfor %}
+          
+        </div>
+    </section>
+
+    
+    <section class="product-container">
+        <div class="product-categories">
+            <div class="top-deal-card">
+                <div class="top-deal-1">Top Deal | </div>
+                <div class="top-deal-2"> Shoes & Clothings</div>
+            </div>
+
+            <div class="see-all">See all<i class="fa-solid fa-chevron-right"></i></div>
+        </div>
+
+        <div class="product-wrapper">
+
+            {% for data in products %}
+           
+             {% if data.category.title == 'Shoes' %}
+            <a href="{% url 'product_detail' data.category data.id %}"  class="product-card">
+                    <img src="{{data.main_image.url}}" alt="">
+                    <div class="text">
+                        <div class="headings">{{data.name}}</div>
+                        <div class="price-card">
+                            <div class="price">₦{{data.price}}</div>
+                            <div class="discount">₦{{data.discount_price}}</div>
+                        </div>
+                    </div>
+            </a>
+            {% endif %}
+            {% endfor %}
+          
+        </div>
+    </section>
+
+
+{% endblock %}
+{% block script %}
+<script src="{% static 'javascript/home.js' %}"></script>
+{% endblock %}

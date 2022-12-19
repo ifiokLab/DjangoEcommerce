@@ -1,0 +1,92 @@
+*{
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+    transition: all .2s linear;
+}
+i{
+    cursor: pointer;
+}
+
+html{
+    font-size: 62.55%;
+}
+html,body {
+    overflow-x: hidden;
+    margin: 0; 
+    padding: 0;
+}
+  
+html::-webkit-scrollbar {
+    width: 0.8rem;
+    
+}
+  
+html::-webkit-scrollbar-track {
+    background: #eee;
+}
+  
+html::-webkit-scrollbar-thumb {
+    background: #0984e3;
+    border-radius: 5rem;
+}
+ 
+.header{
+    padding: 3rem 9%;
+    background-color: #000000;
+    color: white;
+}
+
+.header-container{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header-container .title-card{
+    font-size: 4rem;
+    font-weight: 700;
+}
+.header-container .sale{
+    color: #ff6900;
+}
+.header-container .shop-card{
+   font-size: 1.9rem;
+   font-weight: 800;
+}
+
+
+
+
+
+.footer{
+    padding: 16px 6%;
+    background-color: #282828;
+    color: white;
+}
+.footer .footer-wrapper{
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(17rem,1fr));
+    grid-template-rows: repeat(2,auto);
+    grid-auto-rows: auto;
+    gap: 1.0rem;
+   
+}
+.footer .footer-card{
+}
+.footer .f-headline{
+    font-weight: 900;
+    padding-bottom: 16px;
+    font-size: 14px;
+}
+.footer .f-item{
+    margin-bottom: 4px;
+    font-size: 14px;
+}
+.footer .f-item a{
+    text-decoration: none;
+    color: #c7c7cd;;
+}
+.footer .f-item a:hover{
+    color: #f68b1e;
+    text-decoration: underline;
+}

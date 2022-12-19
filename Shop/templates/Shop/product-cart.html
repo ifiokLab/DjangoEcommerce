@@ -1,0 +1,70 @@
+{% extends 'Shop/index.html ' %}
+{% load static %}
+{% load cart_template_tags %}
+
+{% block head %}
+<link rel="stylesheet" href="{% static 'css/product-cart.css' %}">
+{% endblock %}
+
+{% block content %}
+
+<section class="cart-container">
+    <div class="cart-wrapper">
+        <div class="cart-box1">
+            <div class="cart-title">Cart ({{ request.user|cart_item_count }})</div>
+            {% for order_item in object.product.all %}
+            <div class="cart-card-wrapper">
+                <div class="cart-card">
+                    <div class="cart-card1">
+                      <img src="{{order_item.product.main_image.url}}" alt="">
+                      <div class="text-card">
+                        <p>{{order_item.product.name}}</p>
+                        <div class="stock">In Stock</div>
+                      </div>
+                    </div>
+                    <div class="cart-card2">
+                        <div class="price">₦ {{order_item.product.discount_price}}</div>
+                        <div class="discount-card">
+                            <span class="discount">₦ {{order_item.product.price}}</span>
+                            <span class="rate">-25%</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="bottom-card">
+                    <div class="bottom-card1">
+                        <i class="fa-solid fa-trash"></i>
+                      <a href="{% url 'remove-from-cart' order_item.product.pk %}" style="text-decoration: none;color:unset">
+                        <span>Remove</span>
+                      </a>
+                    </div>
+                    <div class="bottom-card2">
+                        <div>
+                            <a href="{% url 'reduce-quantity-item' order_item.product.pk %}"  class="minus" style="text-decoration: none;">&#8722;</a>
+                            <input type="text"  value="{{ order_item.quantity }}">
+                            <a href="{% url 'add-to-cart' order_item.product.pk %}"  class="plus" style="text-decoration: none;">&#43;</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+           
+        </div>
+        <div class="cart-box2">
+            <div class="cart-sum">
+                <div class="sum-tile">CART SUMMARY</div>
+                <div class="sub-total">
+                    <span>Subtotal</span>
+                    <span>₦ {{ object.get_total_price }}</span>
+                </div>
+               <div class="btn">
+                <a href="{% url 'checkout' %}" class="button">CHECKOUT ({{ object.get_total_price }})</a>
+               </div>
+            </div>
+        </div>
+
+    </div>
+</section>
+{% endblock %}
+{% block javascript %}
+
+{% endblock %}

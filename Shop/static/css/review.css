@@ -1,0 +1,431 @@
+*{
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+    transition: all .2s linear;
+}
+i{
+    cursor: pointer;
+}
+
+
+html,body {
+    overflow-x: hidden;
+    margin: 0; 
+}
+  
+html::-webkit-scrollbar {
+    width: 0.8rem;
+    
+}
+  
+html::-webkit-scrollbar-track {
+    background: #eee;
+}
+  
+html::-webkit-scrollbar-thumb {
+    background: #0984e3;
+    border-radius: 5rem;
+}
+  
+
+.header{
+    
+    position:fixed;
+    z-index: 1000;
+    top: 0;right: 0;left: 0;
+    box-shadow: 0 10px 10px -4px rgb(0 0 0 / 12%);
+    padding: 14px 6%;
+    background-color: white;
+    
+}
+
+.nav{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;  
+   
+}
+
+form{
+    display: flex;
+    margin: 0 6px 0 66px;
+    flex-grow: 1;
+   
+}
+.find{
+    flex-grow: 1;
+    position: relative;
+    border: 1px solid #c7c7cd;
+}
+.find input{
+    width: 100%;
+    padding: 7px 0 7px 30px;
+    font-size: 14px;
+    font-weight: 700;
+    border: transparent;
+}
+
+.find i{
+    position: absolute;
+    top: 8px;
+    left: 6px;
+    font-size: 18px;
+    font-weight: 700;
+}
+form .search-btn{
+    margin-left: 8px;
+    padding: 7px 15px;
+    background-color: #f68b1e;
+    box-shadow: 0 4px 8px 0 rgb(0 0 0 / 20%);
+    border: transparent;
+    color: white;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: 700;
+}
+.nav-items{
+    display: flex;
+}
+.nav-items .nav-card{
+    font-size: 16px;
+    font-weight: 600;
+    margin-left: 10px;
+    padding: 5px;
+}
+.nav-items .nav-card i{
+    font-size: 19px;
+    font-weight: 700;
+}
+.nav-card:hover{
+    color: #f68b1e;
+    cursor: pointer;
+}
+.logo{
+    font-size: 23px;
+    font-weight: 900;
+}
+.logo i{
+    color: #f68b1e;
+}
+.mobile-header{
+    display: none;
+}
+.sidebar{
+    display: none;
+}
+
+.account-container{
+    margin-top: 90px;
+    padding: 14px 6%;
+}
+
+.account-wrapper{
+    display: flex;
+    align-items:baseline;
+}
+.account-wrapper .account-box1{
+    min-width: 240px;
+    box-shadow: 0 4px 8px 0 rgb(0 0 0 / 20%);
+    margin-right: 20px;
+    
+}
+.account-wrapper .account-box2{
+    box-shadow: 0 4px 8px 0 rgb(0 0 0 / 20%);
+    flex-grow: 1;
+    height: 100%;
+}
+.account-box1 .box1-wrapper{
+    padding: 20px;
+}
+.box1-wrapper .box1-items{
+    margin: 6px 0;
+}
+.account-box1 .Logout{
+    text-align: center;
+    padding: 10px 0;
+    border-top:  rgb(0 0 0 / 12%) solid 0.7px;
+    
+}
+.box1-wrapper .box1-items i{
+    font-size: 17px;
+    font-weight: 800;
+    margin-right: 10px;
+}
+
+.account-box2 .title{
+    padding: 15px;
+    font-size: 17px;
+    font-weight: 900;
+    border-bottom:  rgb(0 0 0 / 12%) solid 0.7px;
+    margin-bottom: 10px;
+}
+
+.order-wrapper{
+    display: flex;
+    margin-bottom: 14px;
+}
+
+.order-wrapper .img-card{
+    height: 120px;
+    min-width: 120px;
+}
+
+.img-card img{
+    height: 100%;
+    width: 100%;
+    object-fit: fill;
+}
+
+.order-wrapper .items-card{
+    flex-grow: 1;
+    padding: 0 12px;
+
+}
+
+.items-card .order-title{
+    font-weight: 900;
+    font-size: 14px;
+    overflow: hidden;
+    text-overflow: ellipsis; 
+}
+
+.items-card .order-num{
+    color: #75757a;
+    font-size: 14px;
+    margin: 5px 0;
+}
+.items-card .del{
+    background-color: #6dbd28;
+    padding: 5px;
+    font-size: 12px;
+    color: white;
+    border-radius: 5px;
+}
+
+.items-card .date{
+    font-weight: 900;
+    margin-top: 5px;
+    font-size: 14px;
+}
+
+
+.detail-card .see-title{
+    color: #f68b1e;
+    font-size: 14px;
+    font-weight: 800;
+    white-space: nowrap;
+    padding: 0 10px;
+}
+.see{
+    display: none;
+}
+@media screen and (max-width:1120px) {
+    
+    .help-card{
+        display: none;
+    }
+    form{
+        margin-left: 16px;
+    }
+}
+
+@media screen and (max-width:900px) {
+    
+    .header{
+        display: none;
+    }
+
+    .mobile-header{   
+        position:fixed;
+        z-index: 70;
+        top: 0;right: 0;left: 0;
+        box-shadow: 0 10px 10px -4px rgb(0 0 0 / 12%);
+        padding: 14px 6%;
+        display: flex;
+        flex-direction: column;
+        background-color: white;
+        
+    }
+    .mobile-nav-1{
+        display: flex;
+        justify-content: space-between;
+        
+    }
+    .mobile-nav-1 .fa-bars,.fa-user,.fa-cart-shopping{
+        font-size: 18px;
+        font-weight: 700;
+    }
+    .mobile-nav-1 .fa-star{
+        font-size: 18px;
+        font-weight: 700;
+        color: #f68b1e;
+    }
+    .mobile-nav-card1{
+        display: flex;
+        align-items: center;
+    }
+    .mobile-nav-card1 span{
+        font-size: 23px;
+        font-weight: 900;
+       margin-left: 8px;
+    }
+    .mobile-nav-card2{
+        display: flex;
+        align-items: center;
+    }
+    .mobile-nav-card2 i{
+        margin-left: 12px;
+       
+    }
+    .mobile-nav-card2 i:hover{
+        color: #f68b1e;
+        cursor: pointer;
+    }
+    .mobile-nav-2{
+        border: 1px solid #c7c7cd;
+        display: flex;
+        margin: 0;
+        position: relative;
+        margin-top: 10px;
+    }
+    .mobile-nav-2 input{
+        flex-grow: 1;
+        padding: 7px 0 7px 30px;
+        font-size: 14px;
+        font-weight: 700;
+        border: transparent;
+    }
+    .mobile-nav-2 i{
+        position: absolute;
+        top: 8px;
+        left: 8px;
+        
+    }
+    .sidebar{
+       display: block;
+        position: fixed;
+        background-color: white;
+        z-index: 100;
+        left: 0;top: 0;
+        width: 88vw;
+        height: 100%;
+        transform: translate(-100%);
+        transition: transform 300ms ease-in-out;
+        overflow-y: scroll;
+    }
+        
+    .sidebar::-webkit-scrollbar {
+        width: 0.5rem;
+    }
+    
+    .sidebar::-webkit-scrollbar-track {
+        background: #eee;
+    }
+    
+    .sidebar::-webkit-scrollbar-thumb {
+        background: #0984e3;
+        border-radius: 5rem;
+    }
+    #sidebar.active{
+        transform: translate(0);
+        -webkit-box-shadow: 0 0 0 100vw rgba(0, 0, 0, 0.7);
+        box-shadow: 0 0 0 100vw rgba(0, 0, 0, 0.7);
+    }
+    .sidebar-header{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        box-shadow: 0 10px 10px -4px rgb(0 0 0 / 12%);
+        padding: 14px 6%;
+    }
+    .close-icon i{
+        font-size: 26px;
+        font-weight: 900;
+        padding: 8px;
+    }
+    .close-icon i:hover{
+        transform: rotate(360deg);
+        color: #f68b1e;
+        transition: all 0.4s linear;
+    }
+    .sidebar-nav{
+        padding: 10px 20px;
+    }
+    .sidebar-nav a{
+        color: black;
+        text-decoration: none;
+    }
+    .nav-headings{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+    .nav-headings h2{
+        color: #f68b1e;
+    }
+    .nav-headings i:hover{
+        color: #f68b1e;
+    }
+    .nav-headings h2,.nav-headings i{
+        font-size: 0.8rem;
+    }
+    .sidebar-nav .items{
+        margin: 6px 0;
+        display: flex;
+        align-items: center;
+        cursor: pointer;
+    }
+    .sidebar-nav .items i{
+        margin-right: 5px;
+    }
+    .sidebar-nav .items:hover{
+        color:#f68b1e;
+    }
+    
+    .account-container{
+        margin-top: 120px;
+    }
+   
+    .account-wrapper{
+        flex-direction: column;
+        align-items: stretch;
+    }
+    .account-wrapper .account-box1{
+        min-width: 240px;
+        margin-right: 0;
+        margin-bottom: 20px;
+    }
+    .detail-card{
+        display: none;
+    }
+
+    .order-wrapper .img-card{
+        background-color: #0984e3;
+        height: 140px;
+        min-width: 120px;
+    }
+    .date-wrapper{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    .see{
+        color: #f68b1e;
+        font-weight: 800;
+        font-size: 12px;
+        display: flex;
+    }
+   .detail-card{
+        display: none;
+    }
+    
+}
+@media screen and (max-width:460px) {
+    .order-wrapper{
+        flex-direction: column;
+    }
+    .img-card{
+        margin-bottom: 10px;
+    }
+}

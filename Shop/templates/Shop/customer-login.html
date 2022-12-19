@@ -1,0 +1,45 @@
+{% extends 'Shop/index.html' %}
+{% load static %}
+
+
+{% block head %}
+<link rel="stylesheet" href="{% static 'css/login.css' %}">
+{% endblock %}
+
+
+{% block content %}
+
+   <!--login starts-->
+   <section class="login-container">
+    <section class="login-wrapper">
+        
+        <form action="" method="POST">
+            {% csrf_token %}
+            <div class="icon-card">
+                <i class="fa-solid fa-star"></i>
+                <div class="icon-text">Login to your JUMIA account</div>
+            </div>
+            {% if form.non_field_errors %}
+             <p class="error">{{form.non_field_errors}}</p>
+        
+           {% endif %}
+            <div class="form-items">
+               {{form.username}}
+            </div>
+            <div class="form-items">
+                {{form.password}}
+                <div id="toggle" onclick="ShowHide()"></div>
+            </div>
+            <div class="form-item">
+               <button>Login</button>
+            </div>
+            <p class="support">For further support, you may visit the Help Center or contact our customer service team.</p>
+        </form>
+    </section>
+   </section>
+   <!--login ends-->
+{% endblock %}
+
+{% block javascript %}
+<script src="{% static 'javascript/login.js' %}"></script>
+{% endblock %}

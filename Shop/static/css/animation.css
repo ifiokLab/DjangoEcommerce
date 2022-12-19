@@ -1,0 +1,24 @@
+
+*{
+    box-sizing: border-box;
+}
+
+.box{
+    background:radial-gradient(purple,red,white);
+    height: 120px;
+    width: 120px;
+   border-radius: 60px;
+    border: dashed yellow 10px;
+    color: white;
+    animation: sk-bounce 2.0s infinite ease-in-out;
+}
+
+ 
+@keyframes sk-bounce {
+    0%, 100% { 
+        transform: rotate(-360deg);
+    } 50% { 
+        transform: rotate(360deg);
+    }
+    
+}

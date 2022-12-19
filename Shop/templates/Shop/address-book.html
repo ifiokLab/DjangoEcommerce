@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="account-book.css">
+</head>
+<body>
+    <header class="header">
+        <nav class="nav">
+            <div class="logo">JUMIA<i class="fa-solid fa-star"></i></div>
+            <form action="" id="search">
+                <div class="find">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                    <input type="text" placeholder="Search, Product, Brand and Categories">
+                </div>
+                <button type="submit" class="search-btn">Search</button>
+            </form>
+            <div class="nav-items">
+                <div class="user-card nav-card">
+                   <div class="user-items">
+                        <i class="fa-regular fa-user"></i>
+                        <span>Hi,Wisdom</span>
+                        <i class="fa-solid fa-chevron-down"></i>
+                        <!--<i class="fa-solid fa-chevron-up"></i>-->
+                   </div>
+                </div>
+
+                <div class="help-card nav-card">
+                    <div class="help-items">
+                        <i class="fa-regular fa-circle-question"></i>
+                         <span>Help</span>
+                         <i class="fa-solid fa-chevron-down"></i>
+                    </div>
+                 </div>
+                 
+                 <div class="cart-card nav-card">
+                    <div class="cart-items">
+                        <i class="fa-solid fa-cart-shopping"></i>
+                         <span>Cart</span>
+                         <i class="fa-solid fa-chevron-down"></i>
+                    </div>
+                 </div>
+            </div>
+        </nav>
+    </header>
+    <!--mobile header-->
+    <header class="mobile-header" id="mobile-header">
+        <div class="mobile-nav-1 mobile-items">
+            <div class="mobile-nav-card1">
+                <i class="fa-solid fa-bars" onclick="ToggleMobileNavigation()"></i>
+               <span> JUMIA</span>
+               <i class="fa-solid fa-star"></i>
+            </div>
+
+            <div class="mobile-nav-card2">
+                <i class="fa-regular fa-user"></i>
+                <i class="fa-solid fa-cart-shopping"></i>
+            </div>
+        </div>
+        
+        <form action="" class="mobile-nav-2 mobile-items">
+            <i class="fa-solid fa-magnifying-glass"></i>
+            <input type="text" placeholder="Search, Product, Brand and Categories">
+        </form>
+       
+    </header>
+    <!--sidebar starts-->
+    <div class="sidebar" id="sidebar">
+        <div class="sidebar-header">
+            <div class="logo">
+                <span> JUMIA</span>
+               <i class="fa-solid fa-star"></i>
+            </div>
+            <div class="close-icon">
+                <i class="fa-solid fa-times" onclick="ToggleMobileNavigation()"></i>
+            </div>
+        </div>
+
+        <div class="sidebar-nav">
+            <a href="">
+                <div class="nav-headings">
+                    <h2>MY JUMIA ACCOUNT</h2>
+                    <i class="fa-solid fa-chevron-right"></i>
+                    
+                </div>
+            </a>
+            <div class="items">
+                <i class="fa-solid fa-bag-shopping"></i>
+                <span>Orders</span>
+            </div>
+            <div class="items">
+                <i class="fa-solid fa-heart"></i>
+                <span>Saved items</span>
+            </div>
+            <div class="items">
+                <i class="fa-solid fa-cart-shopping"></i>
+                <span>Cart</span>
+            </div>
+        </div>
+
+        <div class="sidebar-nav">
+            <a href="">
+                <div class="nav-headings">
+                    <h2>OUR CATEGORIES</h2>
+                    <i class="fa-solid fa-chevron-right"></i>
+                    
+                </div>
+            </a>
+            <div class="items">
+                <i class="fa-solid fa-bag-shopping"></i>
+                <span>Supermarket</span>
+            </div>
+            <div class="items">
+                <i class="fa-solid fa-heart"></i>
+                <span>Health & Beauty</span>
+            </div>
+            <div class="items">
+                <i class="fa-solid fa-cart-shopping"></i>
+                <span>Home & Office</span>
+            </div>
+            <div class="items">
+                <i class="fa-solid fa-cart-shopping"></i>
+                <span>Phone & Tablets</span>
+            </div>
+            <div class="items">
+                <i class="fa-solid fa-cart-shopping"></i>
+                <span>Computing</span>
+            </div>
+            <div class="items">
+                <i class="fa-solid fa-cart-shopping"></i>
+                <span>Electronics</span>
+            </div>
+            <div class="items">
+                <i class="fa-solid fa-cart-shopping"></i>
+                <span>Women's Fashion</span>
+            </div>
+            <div class="items">
+                <i class="fa-solid fa-cart-shopping"></i>
+                <span>Men's Fashion</span>
+            </div>
+        </div>
+
+        <div class="sidebar-nav">
+            <a href="">
+                <div class="nav-headings">
+                    <h2>CUSTOMER CARE</h2>
+                    <i class="fa-solid fa-chevron-right"></i>
+                    
+                </div>
+            </a>
+            <div class="items">
+                <span>Sell on Jumia</span>
+            </div>
+            <div class="items">
+                <span>Contact Us</span>
+            </div>
+            <div class="items">
+                <span>Help Center</span>
+            </div>
+        </div>
+    </div>
+    
+   <section class="account-container">
+        <div class="account-wrapper">
+            <div class="account-box1">
+                <div class="box1-wrapper">
+                    <div class="box1-items">
+                        <i class="fa-regular fa-user"></i>
+                        <span>My Jumia Account</span>
+                    </div>
+                    <div class="box1-items">
+                        <i class="fa-solid fa-bag-shopping"></i>
+                        <span>Orders</span>
+                    </div>
+                    <div class="box1-items">
+                        <i class="fa-solid fa-envelope"></i>
+                        <span>Inbox</span>
+                    </div>
+                    <div class="box1-items">
+                        <i class="fa-solid fa-square-pen"></i>
+                        <span>Pending Reviews</span>
+                    </div>
+                    <div class="box1-items">
+                        <i class="fa-solid fa-heart"></i>
+                        <span>Saved Items</span>
+                    </div>
+                    <div class="box1-items">
+                        <i class="fa-solid fa-trash"></i>
+                        <span>Close Account</span>
+                    </div>
+                    
+                    
+                </div>
+                <div class="Logout">
+                    <span>Logout</span>
+                </div>
+            </div>
+            <div class="account-box2">
+                <div class="title">
+                    Account Overview
+                </div>
+               <div class="address-wrapper">
+                   <div class="address-card1">
+                        <div class="card1-items">
+                            <div class="box-wrapper right"><input type="text" placeholder="First Name"></div>
+                            <div class="box-wrapper"><input type="text" placeholder="Last Name"></div>
+                        </div>
+                        <div class="card1-items">
+                            <div class="box-wrapper right"><input type="text" placeholder="Phone Number"></div>
+                            <div class="box-wrapper"><input type="text" placeholder="Additional Phone Number"></div>
+                        </div>
+                   </div>
+                   <div class="address-card2">
+                    <div class="card2-items">
+                        <div class="box2-wrapper"><input type="text" placeholder="Delivery Address"></div>
+                        <div class="box2-wrapper"><input type="text" placeholder="Additional Information"></div>
+                        <div class="card1-items">
+                            <div class="box-wrapper right"><input type="text" placeholder="Region"></div>
+                            <div class="box-wrapper"><input type="text" placeholder="City"></div>
+                        </div>
+                        <div class="box-btn"><button>Save</button></div>
+                    </div>
+                   </div>
+               </div>
+            </div>
+        </div>
+   </section>
+</body>
+<script src="home.js"></script>
+</html>
