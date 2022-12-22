@@ -21,8 +21,13 @@ def SellerCenter(request):
     print(request.user.id)
 
     #(user__id = request.user.id)
-    seller = Seller.objects.get(user__id = request.user.id )
-    products =  Product.objects.filter(seller__id = seller.pk)
+    try:
+        seller = Seller.objects.get(user__id = request.user.id )
+    except:
+        messages.error(request, "Create your Seller Profile")
+        products =  Product.objects.filter(seller__id = None)
+    else:
+        products =  Product.objects.filter(seller__id = seller.pk)
     return render(request,'Shop/sale-home.html',{'products':products})
 
 def SellerOrders(request):
@@ -73,7 +78,12 @@ def DeleteProduct(request,pk):
 
 
 def SellerProfile(request):
-    seller = Seller.objects.get(user__id = request.user.id)
+    try:
+        seller = Seller.objects.get(user__id = request.user.id)
+    except:
+        seller = None
+    else:
+        seller = Seller.objects.get(user__id = request.user.id)
     if request.method == 'POST':
         form  = SellerProfileForm(instance=seller,data=request.POST)
         if form.is_valid():

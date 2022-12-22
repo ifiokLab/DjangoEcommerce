@@ -79,6 +79,7 @@ class Seller(models.Model):
     city = models.ForeignKey(City, on_delete= models.CASCADE)
     bank_name = models.CharField(max_length = 100)
     account_name = models.CharField(max_length = 100)
+    account_number = models.CharField(max_length = 11,null=True)
 
     def __str__(self):
         return f'{self.shop_name}'

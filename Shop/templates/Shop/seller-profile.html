@@ -29,8 +29,13 @@
                 <div class="form-items-card">
                     <div class="form-items-a">Shop Name:</div>
                     <div class="form-items-b">
-                        <input class="disabled" type="text"  id="" value="{{seller.shop_name}}" disabled>
+                        {% if seller == None %}
+                        {{form.shop_name}}
+                        {% else %}
                         <input  type="hidden" name="shop_name" id="" value="{{seller.shop_name}}" >
+                        <input class="disabled" type="text"  id="" value="{{seller.shop_name}}" disabled>
+                        {% endif %}
+                        
                     </div>
                    
                 </div>
@@ -83,9 +88,9 @@
             </div>
             <div class="form-items">
                 <div class="form-items-card">
-                    <div class="form-items-a">Region:</div>
+                    <div class="form-items-a"></div>
                     <div class="form-items-b">
-                        {{form.region}}
+                       
                     </div>
                 </div>
             </div>
@@ -131,4 +136,3 @@
     </section>
    </section>
 {% endblock %}
-
