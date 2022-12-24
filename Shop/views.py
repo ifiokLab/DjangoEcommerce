@@ -127,7 +127,7 @@ def SellerSignUp(request):
             raw_password = form.cleaned_data.get('password1')
             authenticate(email = email,password = raw_password)
             login(request,user)
-            return redirect('home')
+            return redirect('sale_center')
     else:
         form = SellerCreationForm()
     return render(request,'Shop/seller_signup.html',{'form':form})
